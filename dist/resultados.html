@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resultados — Explorer App</title>
+    <meta name="description" content="Resultados de búsqueda de países en Explorer App." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#edf7d2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/resultados-BEdfh4dW.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/icons-mount-BOTelSTY.js">
+    <link rel="modulepreload" crossorigin href="./assets/dom-B4rCBTED.js">
+    <link rel="modulepreload" crossorigin href="./assets/countryCard-DBSY9xhn.js">
+    <link rel="stylesheet" crossorigin href="./assets/icons-mount-CVf9XqDD.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="border-b border-border-strong bg-surface">
+      <div class="app-shell flex h-14 items-center justify-between gap-md tablet:h-16">
+        <a href="./index.html" class="text-subtitle text-text-primary no-underline"
+          >Explorer App</a
+        >
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-xs">
+            <li>
+              <a class="btn btn-quiet text-label" href="./resultados.html" aria-current="page"
+                >Buscar</a
+              >
+            </li>
+            <li class="hidden tablet:block">
+              <a class="btn btn-quiet text-label" href="./design-system.html"
+                >Design System</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="app-shell py-lg tablet:py-xl">
+      <nav aria-label="Ruta de navegación" class="mb-md">
+        <a class="inline-flex items-center gap-xs text-body text-text-primary no-underline" href="./index.html">
+          <span data-icon="arrow-left"></span> Volver al inicio
+        </a>
+      </nav>
+
+      <h1 class="text-title text-text-primary">
+        Resultados para <span id="results-query">todos los países</span>
+      </h1>
+
+      <form
+        id="search-form"
+        class="mt-lg grid gap-sm tablet:grid-cols-[1fr_auto_auto] tablet:items-center"
+        action="./resultados.html"
+        method="get"
+        role="search"
+      >
+        <div class="field">
+          <span class="shrink-0 text-text-secondary" data-icon="search"></span>
+          <label class="sr-only" for="q">Nombre del país</label>
+          <input
+            id="q"
+            name="q"
+            type="search"
+            class="min-w-0 flex-1 bg-transparent text-card text-text-primary outline-none placeholder:text-text-secondary"
+            placeholder="Buscar país…"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+          <button
+            type="button"
+            data-clear
+            class="grid size-6 shrink-0 place-items-center rounded-pill text-text-secondary"
+            hidden
+          >
+            <span class="sr-only">Borrar la búsqueda</span>
+            <span data-icon="x-circle"></span>
+          </button>
+        </div>
+
+        <div class="field tablet:w-[220px]">
+          <label class="sr-only" for="region">Región</label>
+          <select
+            id="region"
+            name="region"
+            class="min-w-0 flex-1 appearance-none bg-transparent text-card text-text-primary outline-none"
+          >
+            <option value="">Todas las regiones</option>
+          </select>
+          <span
+            class="pointer-events-none shrink-0 text-text-secondary"
+            data-icon="chevron-down"
+          ></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full tablet:w-auto">Buscar</button>
+      </form>
+
+      <p
+        id="results-count"
+        class="mt-lg text-label text-text-secondary"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <ul
+        id="results-list"
+        class="mt-md grid gap-sm tablet:grid-cols-2 desktop:grid-cols-3"
+      ></ul>
+    </main>
+
+    <footer class="app-shell border-t border-border pb-xl pt-lg text-label text-text-secondary">
+      <p>Proyecto académico — Diseño Web Adaptable, UNIVO. Datos estáticos, sin consumo de API.</p>
+    </footer>
+
+  </body>
+</html>

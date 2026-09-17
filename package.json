@@ -1,0 +1,19 @@
+{
+  "name": "explorer-app-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interfaz web estática de Explorer App — Diseño Web Adaptable (UNIVO)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}

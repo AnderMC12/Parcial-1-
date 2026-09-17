@@ -1,0 +1,8 @@
+# Dependencias instaladas por npm (se reconstruyen con `npm install`)
+node_modules
+
+# Archivos del sistema operativo y del editor
+.DS_Store
+Thumbs.db
+.vite
+*.local

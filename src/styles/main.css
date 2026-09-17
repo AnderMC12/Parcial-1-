@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   DESIGN TOKENS — Explorer App
+   Extraídos de Figma (archivo WireFrame → página "Design System").
+   En Tailwind v4 cada variable declarada dentro de @theme genera utilidades
+   automáticamente: --color-surface → bg-surface / text-surface / border-surface.
+   ========================================================================= */
+@theme {
+  /* --- Color: superficies ------------------------------------------------ */
+  --color-background: #edf7d2;
+  --color-surface: #edf7b5;
+  --color-surface-raised: #f6fbe0;
+  --color-accent: #c9c19f;
+  --color-accent-strong: #b6ad86;
+
+  /* --- Color: texto ------------------------------------------------------ */
+  --color-text-primary: #5b5b5b;
+  --color-text-secondary: #5f5e5b;
+  --color-on-accent: #3d3c3a;
+  --color-on-primary: #ffffff;
+
+  /* --- Color: bordes, estado y foco -------------------------------------- */
+  --color-primary: #5b5b5b;
+  --color-border: #c6d199;
+  --color-border-strong: #7f8a5e;
+  --color-focus: #33691e;
+  --color-disabled: #bdbdbd;
+  --color-disabled-text: #8a8a8a;
+
+  /* --- Tipografía -------------------------------------------------------- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --text-title: 28px;
+  --text-title--line-height: 36px;
+  --text-title--font-weight: 700;
+
+  --text-subtitle: 18px;
+  --text-subtitle--line-height: 24px;
+  --text-subtitle--font-weight: 600;
+
+  --text-card: 15px;
+  --text-card--line-height: 20px;
+  --text-card--font-weight: 500;
+
+  --text-body: 14px;
+  --text-body--line-height: 20px;
+  --text-body--font-weight: 400;
+
+  --text-label: 13px;
+  --text-label--line-height: 18px;
+  --text-label--font-weight: 500;
+
+  --text-button: 15px;
+  --text-button--line-height: 20px;
+  --text-button--font-weight: 600;
+
+  /* --- Espaciado (escala de 4) ------------------------------------------- */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* --- Radios ------------------------------------------------------------ */
+  --radius-flag: 8px;
+  --radius-field: 10px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+
+  /* --- Elevación --------------------------------------------------------- */
+  --shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-raised: 0 4px 8px 0 rgb(0 0 0 / 0.05);
+
+  /* --- Puntos de quiebre (nombres semánticos del proyecto) --------------- */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1280px;
+
+  /* --- Anchos de contenido ---------------------------------------------- */
+  --container-app: 1120px;
+  --container-reading: 68ch;
+}
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    min-height: 100dvh;
+  }
+
+  /* Foco visible y consistente en todo el sitio (WCAG 2.4.7 / 2.4.11) */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-field);
+  }
+
+  /* Respeta la preferencia del sistema (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+/* =========================================================================
+   COMPONENTES — clases reutilizables construidas sobre los tokens
+   ========================================================================= */
+@layer components {
+  /* Enlace de salto: primer foco tabulable de cada página */
+  .skip-link {
+    @apply absolute left-md top-md z-50 -translate-y-[200%] rounded-field bg-primary px-md py-sm text-button text-on-primary;
+    transition: transform 150ms ease;
+  }
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  .app-shell {
+    @apply mx-auto w-full max-w-app px-md tablet:px-lg desktop:px-xl;
+  }
+
+  /* Campo de búsqueda y filtro de región */
+  .field {
+    @apply flex h-12 w-full items-center gap-sm rounded-field border border-border-strong bg-surface px-md text-card text-text-primary;
+  }
+
+  .card {
+    @apply flex items-center gap-md rounded-card border border-border-strong bg-surface p-[12px] shadow-card;
+  }
+
+  /* Enlace de tarjeta: objetivo táctil ≥ 44px y estado hover/active */
+  .card-link {
+    @apply block no-underline;
+    transition: transform 150ms ease, box-shadow 150ms ease,
+      background-color 150ms ease;
+  }
+  .card-link:hover .card {
+    @apply bg-surface-raised shadow-raised;
+  }
+  .card-link:active .card {
+    @apply bg-accent;
+  }
+
+  .pill {
+    @apply inline-flex min-h-11 items-center justify-center rounded-pill border border-border-strong bg-accent px-[12px] text-label text-on-accent no-underline;
+    transition: background-color 150ms ease;
+  }
+  .pill:hover {
+    @apply bg-accent-strong;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-pill bg-accent px-[10px] py-xs text-body text-on-accent;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-sm rounded-field px-md text-button no-underline;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+  .btn-primary {
+    @apply bg-primary text-on-primary;
+  }
+  .btn-primary:hover {
+    @apply bg-text-primary/90;
+  }
+  .btn-quiet {
+    @apply border border-border-strong bg-surface text-text-primary;
+  }
+  .btn-quiet:hover {
+    @apply bg-surface-raised;
+  }
+  .btn[aria-disabled="true"] {
+    @apply pointer-events-none bg-disabled text-disabled-text;
+  }
+
+  /* Fila de dato del detalle */
+  .stat-row {
+    @apply flex items-center justify-between gap-md border-b border-border py-[12px] text-body;
+  }
+  .stat-row:last-child {
+    @apply border-b-0;
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalle del país — Explorer App</title>
+    <meta name="description" content="Ficha con capital, región, población, idiomas y moneda." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#edf7d2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/detalle-BJDh7WZG.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/icons-mount-BOTelSTY.js">
+    <link rel="modulepreload" crossorigin href="./assets/dom-B4rCBTED.js">
+    <link rel="stylesheet" crossorigin href="./assets/icons-mount-CVf9XqDD.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="border-b border-border-strong bg-surface">
+      <div class="app-shell flex h-14 items-center justify-between gap-md tablet:h-16">
+        <a href="./index.html" class="text-subtitle text-text-primary no-underline"
+          >Explorer App</a
+        >
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-xs">
+            <li><a class="btn btn-quiet text-label" href="./resultados.html">Buscar</a></li>
+            <li class="hidden tablet:block">
+              <a class="btn btn-quiet text-label" href="./design-system.html">Design System</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="app-shell py-lg tablet:py-xl">
+      <nav aria-label="Ruta de navegación" class="mb-md">
+        <a
+          class="inline-flex items-center gap-xs text-body text-text-primary no-underline"
+          href="./resultados.html"
+        >
+          <span data-icon="arrow-left"></span> Volver a los resultados
+        </a>
+      </nav>
+
+      <!-- Estado de error: código de país desconocido en la URL -->
+      <div id="detail-missing" hidden class="rounded-card border border-border-strong bg-surface p-lg">
+        <h1 class="text-title text-text-primary">Ese país no está en el catálogo</h1>
+        <p class="mt-xs text-body text-text-secondary">
+          El enlace apunta a un código que no existe. Vuelve a la búsqueda para
+          elegir otro país.
+        </p>
+        <a class="btn btn-primary mt-md" href="./index.html">Ir al inicio</a>
+      </div>
+
+      <div id="detail" class="desktop:grid desktop:grid-cols-[minmax(0,420px)_1fr] desktop:gap-xl">
+        <div>
+          <div
+            id="flag-hero"
+            role="img"
+            aria-label="Distintivo del país"
+            class="grid aspect-[3/2] w-full place-items-center rounded-card border border-border-strong bg-surface-raised shadow-raised"
+          >
+            <span id="country-flag" class="text-[64px] font-semibold leading-none tracking-wide text-text-secondary tablet:text-[80px]"></span>
+          </div>
+          <h1 id="country-name" class="mt-md text-title text-text-primary"></h1>
+        </div>
+
+        <div class="mt-lg desktop:mt-0">
+          <section
+            class="rounded-card border border-border-strong bg-surface px-md pb-md pt-lg shadow-card"
+            aria-labelledby="info-general"
+          >
+            <h2 id="info-general" class="text-card text-text-primary">Información general</h2>
+
+            <dl class="mt-sm">
+              <div class="stat-row">
+                <dt class="text-text-secondary">Capital</dt>
+                <dd id="stat-capital" class="text-right text-text-primary"></dd>
+              </div>
+              <div class="stat-row">
+                <dt class="text-text-secondary">Región</dt>
+                <dd id="stat-region" class="text-right text-text-primary"></dd>
+              </div>
+              <div class="stat-row">
+                <dt class="text-text-secondary">Población</dt>
+                <dd id="stat-population" class="text-right text-text-primary"></dd>
+              </div>
+              <div class="stat-row">
+                <dt><span class="badge">Idiomas</span></dt>
+                <dd id="stat-languages" class="text-right text-text-primary"></dd>
+              </div>
+              <div class="stat-row">
+                <dt><span class="badge">Moneda</span></dt>
+                <dd id="stat-currency" class="text-right text-text-primary"></dd>
+              </div>
+            </dl>
+          </section>
+
+          <section id="borders-section" class="mt-lg" aria-labelledby="fronteras">
+            <h2 id="fronteras" class="text-card text-text-primary">Países fronterizos</h2>
+            <ul id="borders-list" class="mt-md flex flex-wrap gap-sm"></ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-shell border-t border-border pb-xl pt-lg text-label text-text-secondary">
+      <p>Proyecto académico — Diseño Web Adaptable, UNIVO. Datos estáticos, sin consumo de API.</p>
+    </footer>
+
+  </body>
+</html>

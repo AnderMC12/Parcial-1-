@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explorer App — Inicio</title>
+    <meta
+      name="description"
+      content="Explorer App: consulta la capital, la región, la población, los idiomas y la moneda de cada país."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#edf7d2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="border-b border-border-strong bg-surface">
+      <div class="app-shell flex h-14 items-center justify-between gap-md tablet:h-16">
+        <a
+          href="./index.html"
+          class="text-subtitle text-text-primary no-underline"
+          aria-current="page"
+          >Explorer App</a
+        >
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-xs">
+            <li>
+              <a class="btn btn-quiet text-label" href="./resultados.html">Buscar</a>
+            </li>
+            <li class="hidden tablet:block">
+              <a class="btn btn-quiet text-label" href="./design-system.html"
+                >Design System</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="app-shell py-lg tablet:py-xl">
+      <div class="desktop:grid desktop:grid-cols-[260px_1fr] desktop:gap-xl">
+        <!-- Rail lateral: sólo aparece cuando hay espacio real para él -->
+        <aside class="hidden desktop:block" aria-labelledby="regiones-titulo">
+          <h2 id="regiones-titulo" class="text-card text-text-primary">
+            Explora por región
+          </h2>
+          <ul class="mt-md flex flex-col gap-xs">
+            <li><a class="pill w-full" href="./resultados.html?region=África">África</a></li>
+            <li><a class="pill w-full" href="./resultados.html?region=América">América</a></li>
+            <li><a class="pill w-full" href="./resultados.html?region=Asia">Asia</a></li>
+            <li><a class="pill w-full" href="./resultados.html?region=Europa">Europa</a></li>
+            <li><a class="pill w-full" href="./resultados.html?region=Oceanía">Oceanía</a></li>
+          </ul>
+          <p class="mt-md text-label text-text-secondary">
+            <span id="country-total">18</span> países en el catálogo.
+          </p>
+        </aside>
+
+        <div>
+          <h1 class="text-title text-text-primary">Busca un país</h1>
+          <p class="mt-xs max-w-reading text-body text-text-secondary">
+            Escribe un nombre o filtra por región para ver capital, población,
+            idiomas y moneda.
+          </p>
+
+          <form
+            id="search-form"
+            class="mt-lg grid gap-sm tablet:grid-cols-[1fr_auto_auto] tablet:items-center"
+            action="./resultados.html"
+            method="get"
+            role="search"
+          >
+            <div class="field">
+              <span class="shrink-0 text-text-secondary" data-icon="search"></span>
+              <label class="sr-only" for="q">Nombre del país</label>
+              <input
+                id="q"
+                name="q"
+                type="search"
+                class="min-w-0 flex-1 bg-transparent text-card text-text-primary outline-none placeholder:text-text-secondary"
+                placeholder="Buscar país…"
+                autocomplete="off"
+                enterkeyhint="search"
+              />
+              <button
+                type="button"
+                data-clear
+                class="grid size-6 shrink-0 place-items-center rounded-pill text-text-secondary"
+                hidden
+              >
+                <span class="sr-only">Borrar la búsqueda</span>
+                <span data-icon="x-circle"></span>
+              </button>
+            </div>
+
+            <div class="field tablet:w-[220px]">
+              <label class="sr-only" for="region">Región</label>
+              <select
+                id="region"
+                name="region"
+                class="min-w-0 flex-1 appearance-none bg-transparent text-card text-text-primary outline-none"
+              >
+                <option value="">Todas las regiones</option>
+              </select>
+              <span
+                class="pointer-events-none shrink-0 text-text-secondary"
+                data-icon="chevron-down"
+              ></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full tablet:w-auto">
+              Buscar
+            </button>
+          </form>
+
+          <section class="mt-xl" aria-labelledby="destacados">
+            <h2 id="destacados" class="text-card text-text-primary">
+              Países recomendados
+            </h2>
+            <ul
+              id="featured-list"
+              class="mt-md grid gap-sm tablet:grid-cols-2 desktop:grid-cols-3"
+            ></ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-shell border-t border-border pb-xl pt-lg text-label text-text-secondary">
+      <p>
+        Proyecto académico — Diseño Web Adaptable, UNIVO. Datos estáticos, sin
+        consumo de API.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/pages/home.ts"></script>
+  </body>
+</html>

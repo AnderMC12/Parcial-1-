@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design System — Explorer App</title>
+    <meta name="description" content="Tokens y componentes de Explorer App." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#edf7d2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/designSystem-C8-TQQPE.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/icons-mount-BOTelSTY.js">
+    <link rel="stylesheet" crossorigin href="./assets/icons-mount-CVf9XqDD.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="border-b border-border-strong bg-surface">
+      <div class="app-shell flex h-14 items-center justify-between gap-md tablet:h-16">
+        <a href="./index.html" class="text-subtitle text-text-primary no-underline">Explorer App</a>
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-xs">
+            <li><a class="btn btn-quiet text-label" href="./resultados.html">Buscar</a></li>
+            <li><a class="btn btn-quiet text-label" href="./design-system.html" aria-current="page">Design System</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="app-shell py-lg tablet:py-xl">
+      <h1 class="text-title text-text-primary">Design System</h1>
+      <p class="mt-xs max-w-reading text-body text-text-secondary">
+        Cada valor de esta página sale de <code>@theme</code> en
+        <code>src/styles/main.css</code>. Si cambia el token, cambia el sitio entero.
+      </p>
+
+      <section class="mt-xl" aria-labelledby="ds-color">
+        <h2 id="ds-color" class="text-subtitle text-text-primary">Color</h2>
+        <ul class="mt-md grid grid-cols-2 gap-md tablet:grid-cols-4 desktop:grid-cols-5">
+          <li><div class="h-14 rounded-flag border border-border-strong bg-background"></div><p class="mt-xs text-label">background</p><p class="text-label text-text-secondary">#edf7d2</p></li>
+          <li><div class="h-14 rounded-flag border border-border-strong bg-surface"></div><p class="mt-xs text-label">surface</p><p class="text-label text-text-secondary">#edf7b5</p></li>
+          <li><div class="h-14 rounded-flag border border-border-strong bg-surface-raised"></div><p class="mt-xs text-label">surface-raised</p><p class="text-label text-text-secondary">#f6fbe0</p></li>
+          <li><div class="h-14 rounded-flag border border-border-strong bg-accent"></div><p class="mt-xs text-label">accent</p><p class="text-label text-text-secondary">#c9c19f</p></li>
+          <li><div class="h-14 rounded-flag border border-border-strong bg-accent-strong"></div><p class="mt-xs text-label">accent-strong</p><p class="text-label text-text-secondary">#b6ad86</p></li>
+          <li><div class="h-14 rounded-flag bg-text-primary"></div><p class="mt-xs text-label">text-primary</p><p class="text-label text-text-secondary">#5b5b5b</p></li>
+          <li><div class="h-14 rounded-flag bg-text-secondary"></div><p class="mt-xs text-label">text-secondary</p><p class="text-label text-text-secondary">#5f5e5b</p></li>
+          <li><div class="h-14 rounded-flag bg-border"></div><p class="mt-xs text-label">border</p><p class="text-label text-text-secondary">#c6d199</p></li>
+          <li><div class="h-14 rounded-flag bg-border-strong"></div><p class="mt-xs text-label">border-strong</p><p class="text-label text-text-secondary">#7f8a5e</p></li>
+          <li><div class="h-14 rounded-flag bg-focus"></div><p class="mt-xs text-label">focus</p><p class="text-label text-text-secondary">#33691e</p></li>
+        </ul>
+      </section>
+
+      <section class="mt-xl" aria-labelledby="ds-type">
+        <h2 id="ds-type" class="text-subtitle text-text-primary">Tipografía</h2>
+        <div class="mt-md flex flex-col gap-sm">
+          <p class="text-title text-text-primary">Título — Inter Bold 28/36</p>
+          <p class="text-subtitle text-text-primary">Subtítulo — Inter SemiBold 18/24</p>
+          <p class="text-card text-text-primary">Texto de tarjeta — Inter Medium 15/20</p>
+          <p class="text-body text-text-primary">Texto de contenido — Inter Regular 14/20</p>
+          <p class="text-label text-text-secondary">Etiqueta — Inter Medium 13/18</p>
+          <p class="text-button text-text-primary">Texto de botón — Inter SemiBold 15/20</p>
+        </div>
+      </section>
+
+      <section class="mt-xl" aria-labelledby="ds-space">
+        <h2 id="ds-space" class="text-subtitle text-text-primary">Espaciado y radios</h2>
+        <ul class="mt-md flex flex-wrap items-end gap-lg">
+          <li><div class="h-6 w-xs bg-border-strong"></div><p class="mt-xs text-label">xs · 4px</p></li>
+          <li><div class="h-6 w-sm bg-border-strong"></div><p class="mt-xs text-label">sm · 8px</p></li>
+          <li><div class="h-6 w-md bg-border-strong"></div><p class="mt-xs text-label">md · 16px</p></li>
+          <li><div class="h-6 w-lg bg-border-strong"></div><p class="mt-xs text-label">lg · 24px</p></li>
+          <li><div class="h-6 w-xl bg-border-strong"></div><p class="mt-xs text-label">xl · 32px</p></li>
+        </ul>
+        <ul class="mt-lg flex flex-wrap gap-md">
+          <li><div class="size-14 rounded-flag bg-accent"></div><p class="mt-xs text-label">radius-flag · 8</p></li>
+          <li><div class="size-14 rounded-field bg-accent"></div><p class="mt-xs text-label">radius-field · 10</p></li>
+          <li><div class="size-14 rounded-card bg-accent"></div><p class="mt-xs text-label">radius-card · 12</p></li>
+          <li><div class="size-14 rounded-pill bg-accent"></div><p class="mt-xs text-label">radius-pill</p></li>
+        </ul>
+      </section>
+
+      <section class="mt-xl" aria-labelledby="ds-components">
+        <h2 id="ds-components" class="text-subtitle text-text-primary">Componentes</h2>
+
+        <h3 class="mt-lg text-card text-text-primary">Botones</h3>
+        <div class="mt-sm flex flex-wrap gap-sm">
+          <button type="button" class="btn btn-primary">Buscar</button>
+          <button type="button" class="btn btn-quiet">Limpiar filtros</button>
+          <button type="button" class="btn btn-primary" aria-disabled="true">No disponible</button>
+        </div>
+
+        <h3 class="mt-lg text-card text-text-primary">Campo y filtro</h3>
+        <div class="mt-sm grid gap-sm tablet:grid-cols-2">
+          <div class="field">
+            <span class="shrink-0 text-text-secondary" data-icon="search"></span>
+            <label class="sr-only" for="ds-q">Nombre del país</label>
+            <input id="ds-q" type="search" class="min-w-0 flex-1 bg-transparent text-card outline-none placeholder:text-text-secondary" placeholder="Buscar país…" />
+          </div>
+          <div class="field">
+            <label class="sr-only" for="ds-region">Región</label>
+            <select id="ds-region" class="min-w-0 flex-1 appearance-none bg-transparent text-card outline-none">
+              <option>Todas las regiones</option>
+              <option>América</option>
+            </select>
+            <span class="pointer-events-none shrink-0 text-text-secondary" data-icon="chevron-down"></span>
+          </div>
+        </div>
+
+        <h3 class="mt-lg text-card text-text-primary">Tarjeta de país</h3>
+        <ul class="mt-sm grid gap-sm tablet:grid-cols-2">
+          <li>
+            <a class="card-link" href="./detalle.html?code=ARG" aria-label="Ver detalle de Argentina">
+              <article class="card">
+                <span class="flex h-8 w-12 shrink-0 items-center justify-center rounded-flag border border-border bg-surface-raised text-card tracking-wide text-text-secondary" aria-hidden="true">AR</span>
+                <span class="min-w-0 flex-1">
+                  <span class="block truncate text-card text-text-primary">Argentina</span>
+                  <span class="block truncate text-label text-text-secondary">Capital: Buenos Aires</span>
+                </span>
+                <span class="shrink-0 text-text-secondary" data-icon="chevron-right"></span>
+              </article>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="mt-lg text-card text-text-primary">Etiquetas y píldoras</h3>
+        <div class="mt-sm flex flex-wrap items-center gap-sm">
+          <span class="badge">Idiomas</span>
+          <span class="badge">Moneda</span>
+          <a class="pill" href="./detalle.html?code=CHL">Chile</a>
+          <a class="pill" href="./detalle.html?code=BRA">Brasil</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-shell border-t border-border pb-xl pt-lg text-label text-text-secondary">
+      <p>Proyecto académico — Diseño Web Adaptable, UNIVO.</p>
+    </footer>
+
+  </body>
+</html>
