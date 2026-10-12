@@ -35,7 +35,7 @@ export function emptyState(query: string, region: string): string {
     .join(' en ');
   return `
     <li class="rounded-card border border-border-strong bg-surface p-lg text-center tablet:col-span-2 desktop:col-span-3">
-      <p class="text-card text-text-primary">Sin coincidencias para ${what || 'esa búsqueda'}.</p>
+      <p class="break-words text-card text-text-primary">Sin coincidencias para ${what || 'esa búsqueda'}.</p>
       <p class="mt-xs text-body text-text-secondary">Revisa la ortografía o amplía la región a “Todas”.</p>
       <a class="btn btn-quiet mt-md" href="./index.html">Volver al inicio</a>
     </li>`;
