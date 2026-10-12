@@ -3,7 +3,8 @@
 Implementación en **Vite + TypeScript + Tailwind CSS v4** del wireframe *Explorer App*
 diseñado en Figma para la asignatura **Diseño Web Adaptable** (UNIVO).
 
-- **Sitio publicado:** <https://andermc12.github.io/Parcial-1-/>
+- **Producci�n (Vercel):** <https://explorer-app-anderson-u20240406.vercel.app>
+- **Espejo (GitHub Pages):** <https://andermc12.github.io/Parcial-1-/>
 - **Figma:** <https://www.figma.com/design/ShSMYUKkpsRwDY8dRO8sR1/WireFrame>
 - **Alcance:** interfaz estática. No hay backend ni consumo de API; los datos viven
   en `src/data/countries.ts` y se empaquetan en tiempo de build.
@@ -134,3 +135,17 @@ compila el sitio y lo publica en GitHub Pages. Actívalo en
 - [`docs/HANDOFF.md`](docs/HANDOFF.md) — trazabilidad Figma ⇄ código y notas de entrega.
 - [`docs/REVISION-PARES.md`](docs/REVISION-PARES.md) — guion y formato de revisión entre pares.
 - [`docs/MEJORAS-UX.md`](docs/MEJORAS-UX.md) — qué cambió respecto al wireframe y por qué.
+
+## 9. Captura
+
+
+## 10. Flujo de trabajo
+
+El repositorio sigue GitHub Flow. La rama `main` est� protegida y exige un Pull
+Request para integrar cualquier cambio. Cada rama de trabajo genera una URL de
+preview en Vercel que permite revisar la mejora antes de integrarla, y los commits
+siguen la convenci�n [Conventional Commits](https://www.conventionalcommits.org/es/).
+
+| Mejora | Pull Request |
+|---|---|
+| Evitar desbordamiento horizontal con b�squedas de una palabra larga | [#1](https://github.com/AnderMC12/Parcial-1-/pull/1) |
