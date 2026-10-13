@@ -1,9 +1,9 @@
-import { icon, type IconName } from '../components/icons';
+import { icon, type IconName } from './icons';
 
 /**
  * Inserta los iconos declarados en el HTML como `<span data-icon="search">`.
- * Mantener el marcado libre de SVG hace las páginas mucho más legibles y
- * permite cambiar el set de iconos en un solo archivo.
+ * Mantener el marcado libre de SVG lo hace mucho más legible y permite cambiar
+ * el set de iconos desde un solo archivo.
  */
 export function mountIcons(root: ParentNode = document): void {
   for (const node of root.querySelectorAll<HTMLElement>('[data-icon]')) {
