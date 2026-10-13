@@ -4,11 +4,20 @@ Aplicación web que obtiene información de países desde una API, la muestra en
 tarjetas y permite buscarla y filtrarla en el navegador. Construida con **Vite,
 TypeScript y Tailwind CSS v4**, sin framework de interfaz.
 
+ feat/consumo-api-tipado
 - **Versión evaluada:** etiqueta [`entrega-lab-3`](https://github.com/AnderMC12/Parcial-1-/releases/tag/entrega-lab-3)
   · [ver el código en esa etiqueta](https://github.com/AnderMC12/Parcial-1-/tree/entrega-lab-3)
 - **Producción (Vercel):** <https://explorer-app-anderson-u20240406.vercel.app>
 - **Espejo (GitHub Pages):** <https://andermc12.github.io/Parcial-1-/>
 - **Diseño original (Figma):** <https://www.figma.com/design/ShSMYUKkpsRwDY8dRO8sR1/WireFrame>
+
+- **Producci�n (Vercel):** <https://explorer-app-anderson-u20240406.vercel.app>
+- **Espejo (GitHub Pages):** <https://andermc12.github.io/Parcial-1-/>
+- **Figma:** <https://www.figma.com/design/ShSMYUKkpsRwDY8dRO8sR1/WireFrame>
+- **Alcance:** interfaz estática. No hay backend ni consumo de API; los datos viven
+  en `src/data/countries.ts` y se empaquetan en tiempo de build.
+- **Adaptable a:** Mobile (≥360 px), Tablet (≥768 px) y Desktop (≥1024 px).
+-  main
 
 ---
 
@@ -207,8 +216,28 @@ en Vercel, y la integración en `main` despliega a producción automáticamente.
 
 - [`docs/DESIGN-SYSTEM.md`](docs/DESIGN-SYSTEM.md) — tokens, escala tipográfica y componentes.
 - [`docs/ACCESIBILIDAD.md`](docs/ACCESIBILIDAD.md) — decisiones WCAG 2.1 AA y ratios de contraste.
+ feat/consumo-api-tipado
 - [`docs/HANDOFF.md`](docs/HANDOFF.md) — trazabilidad entre Figma y el código.
 - [`docs/MEJORAS-UX.md`](docs/MEJORAS-UX.md) — diferencias respecto al wireframe y su motivo.
 - [`docs/REVISION-PARES.md`](docs/REVISION-PARES.md) — guion de revisión entre pares.
 - `references/` — frames exportados de Figma.
 - `Responsively-Screenshots/` — capturas del sitio en los tres tamaños.
+
+- [`docs/HANDOFF.md`](docs/HANDOFF.md) — trazabilidad Figma ⇄ código y notas de entrega.
+- [`docs/REVISION-PARES.md`](docs/REVISION-PARES.md) — guion y formato de revisión entre pares.
+- [`docs/MEJORAS-UX.md`](docs/MEJORAS-UX.md) — qué cambió respecto al wireframe y por qué.
+
+## 9. Captura
+
+
+## 10. Flujo de trabajo
+
+El repositorio sigue GitHub Flow. La rama `main` est� protegida y exige un Pull
+Request para integrar cualquier cambio. Cada rama de trabajo genera una URL de
+preview en Vercel que permite revisar la mejora antes de integrarla, y los commits
+siguen la convenci�n [Conventional Commits](https://www.conventionalcommits.org/es/).
+
+| Mejora | Pull Request |
+|---|---|
+| Evitar desbordamiento horizontal con b�squedas de una palabra larga | [#1](https://github.com/AnderMC12/Parcial-1-/pull/1) |
+ main
