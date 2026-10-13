@@ -15,11 +15,12 @@ da un ancla fija en tablet y desktop.
 "Región: Todos ⌄" era un rectángulo con un icono. Ahora es un control real: se abre
 con teclado, usa el selector nativo en móvil y su valor viaja en la URL.
 
-## 3. La búsqueda es un formulario GET
+## 3. La búsqueda filtra en vivo sobre los datos cargados
 
-Enviar el formulario navega a `resultados.html?q=…&region=…`. Con eso el prototipo
-es navegable de verdad, cada resultado se puede compartir y el botón Atrás del
-navegador funciona como espera el usuario.
+La primera versión navegaba a una página de resultados aparte. Al incorporar el
+consumo de la API, el listado y la búsqueda viven en la misma pantalla: los datos se
+piden una sola vez y los filtros se aplican en memoria, con un retardo de 300 ms en
+el campo de texto. Se evita así una recarga completa por cada búsqueda.
 
 ## 4. Estados que el wireframe no cubría
 
@@ -29,16 +30,17 @@ navegador funciona como espera el usuario.
   en lugar de una sección vacía.
 - **Hover y active** en tarjetas, píldoras y botones.
 
-## 5. Distintivo de país en lugar de rectángulos grises
+## 5. Banderas reales desde la fuente de datos
 
-El placeholder `#d9d9d9` y el mensaje "Bandera no disponible" se sustituyen por el
-código ISO 3166-1 alpha-2 del país dentro de una caja con los tokens del sistema.
+El placeholder `#d9d9d9` y el mensaje "Bandera no disponible" se sustituyen por la
+imagen de la bandera que entrega la API.
 
-La primera versión usaba el emoji de bandera, pero Windows no incluye la fuente
-correspondiente y el navegador acaba dibujando las letras indicadoras regionales en
-crudo: el resultado cambiaba según el sistema operativo de quien abría el sitio. El
-código de dos letras se ve idéntico en todas partes, no requiere red ni assets, y
-mantiene el sitio completamente estático.
+Hubo un paso intermedio que conviene registrar. Una versión anterior usaba el emoji
+de bandera, pero Windows no incluye la fuente correspondiente y el navegador acababa
+dibujando las letras indicadoras regionales en crudo: el resultado cambiaba según el
+sistema operativo. Al pasar a consumir la API, las banderas llegan como imágenes SVG
+y el problema desaparece en todas las plataformas. Si un país no trae imagen, la
+tarjeta muestra una caja con la leyenda correspondiente en lugar de un hueco.
 
 ## 6. Jerarquía de lectura en el detalle
 

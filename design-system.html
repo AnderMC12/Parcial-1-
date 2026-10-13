@@ -106,16 +106,20 @@
         </div>
 
         <h3 class="mt-lg text-card text-text-primary">Tarjeta de país</h3>
-        <ul class="mt-sm grid gap-sm tablet:grid-cols-2">
+        <ul class="mt-sm grid gap-md tablet:grid-cols-2">
           <li>
-            <a class="card-link" href="./detalle.html?code=ARG" aria-label="Ver detalle de Argentina">
-              <article class="card">
-                <span class="flex h-8 w-12 shrink-0 items-center justify-center rounded-flag border border-border bg-surface-raised text-card tracking-wide text-text-secondary" aria-hidden="true">AR</span>
-                <span class="min-w-0 flex-1">
-                  <span class="block truncate text-card text-text-primary">Argentina</span>
-                  <span class="block truncate text-label text-text-secondary">Capital: Buenos Aires</span>
-                </span>
-                <span class="shrink-0 text-text-secondary" data-icon="chevron-right"></span>
+            <a class="card-link h-full" href="./detalle.html?code=ARG" aria-label="Ver detalle de Argentina">
+              <article class="flex h-full flex-col gap-sm rounded-card border border-border-strong bg-surface p-[12px] shadow-card">
+                <span class="grid aspect-[3/2] w-full place-items-center rounded-flag border border-border bg-surface-raised text-label text-text-secondary">Bandera</span>
+                <h4 class="flex items-center justify-between gap-sm text-card text-text-primary">
+                  <span>Argentina</span>
+                  <span class="shrink-0 text-text-secondary" data-icon="chevron-right"></span>
+                </h4>
+                <dl class="mt-auto grid gap-xs text-label">
+                  <div class="flex items-baseline justify-between gap-sm"><dt class="text-text-secondary">Población</dt><dd class="text-text-primary">45.376.763</dd></div>
+                  <div class="flex items-baseline justify-between gap-sm"><dt class="text-text-secondary">Región</dt><dd class="text-text-primary">América</dd></div>
+                  <div class="flex items-baseline justify-between gap-sm"><dt class="text-text-secondary">Capital</dt><dd class="text-text-primary">Buenos Aires</dd></div>
+                </dl>
               </article>
             </a>
           </li>
@@ -135,6 +139,6 @@
       <p>Proyecto académico — Diseño Web Adaptable, UNIVO.</p>
     </footer>
 
-    <script type="module" src="/src/pages/design-system.ts"></script>
+    <script type="module" src="/src/design-system.ts"></script>
   </body>
 </html>
